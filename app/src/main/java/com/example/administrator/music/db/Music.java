@@ -9,6 +9,7 @@ import org.litepal.crud.DataSupport;
 public class Music extends DataSupport
 {
     private int id;
+    private int ImageId;
     private String musicName;
     private String words;
     public void setId(int id) {
@@ -34,5 +35,13 @@ public class Music extends DataSupport
     public String getWords() {
         return words;
     }
+
+    public int getImageId() {
+        return ImageId;
+    }
+    public void setImageId(int imageId) {
+        ImageId = imageId;
+    }
+
 
 }
