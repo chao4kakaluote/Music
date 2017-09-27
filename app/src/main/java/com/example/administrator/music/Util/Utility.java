@@ -11,22 +11,27 @@ import java.io.File;
  */
 public class Utility
 {
-    public static String localMusicPath= Environment.getExternalStorageDirectory()+"/music";
+    public static String localMusicPath= Environment.getExternalStorageDirectory().toString();
     public static boolean initMusicList()
     {
         try
         {
-            String musicPath= localMusicPath.toString();
-            File mfile=new File(musicPath);
+            Log.d("musicPath",localMusicPath);
+            File mfile=new File(localMusicPath);
             File[] files=mfile.listFiles();
+            Log.d("filesSize",String.valueOf(files.length));
             for(int i=0;i<files.length;i++)
             {
-                if(checkIsMusicFile(files[i].getPath())) {
+                if(checkIsMusicFile(files[i].getPath()))
+                {
                     Music music=new Music();
                     music.setMusicName(files[i].getName());
+                    music.setImageId(R.drawable.shenglue);
+                    Log.d("fileName",files[i].getName());
                     music.save();
-                }
             }
+
+        }
             return true;
         }
         catch(Exception e)
