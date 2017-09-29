@@ -1,4 +1,4 @@
-package com.example.administrator.music;
+package com.example.administrator.music.activity;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,12 +13,13 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.administrator.music.Adapter.MusicAdapter;
+import com.example.administrator.music.R;
 import com.example.administrator.music.Util.Utility;
 import com.example.administrator.music.db.Music;
 import org.litepal.crud.DataSupport;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.jar.Manifest;
 
 /**
  * Created by Administrator on 2017/9/26.

@@ -6,6 +6,13 @@ import android.util.Log;
 import com.example.administrator.music.R;
 import com.example.administrator.music.db.Music;
 import java.io.File;
+
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+
 /**
  * Created by Administrator on 2017/9/26.
  */
@@ -30,7 +37,6 @@ public class Utility
                     Log.d("fileName",files[i].getName());
                     music.save();
             }
-
         }
             return true;
         }
@@ -40,7 +46,6 @@ public class Utility
         }
         return false;
     }
-
     public static boolean checkIsMusicFile(String fName) {
         boolean isMusicFile = false;
         // 获取扩展名
@@ -54,5 +59,23 @@ public class Utility
             isMusicFile = false;
         }
         return isMusicFile;
+    }
+    public static void sendRequest(String url, Callback callback)
+    {
+        OkHttpClient client=new OkHttpClient();
+        Request request=new Request.Builder().url(url).build();
+        client.newCall(request).enqueue(callback);
+    }
+    public static void sendPostRequest(String url,String argsName[],String args[],Callback callback)
+    {
+        OkHttpClient client=new OkHttpClient();
+        FormBody.Builder form=new okhttp3.FormBody.Builder();
+        for(int i=0;i<argsName.length;i++)
+        {
+            form.add(argsName[i],args[i]);
+        }
+        RequestBody formBody=form.build();
+        Request request=new Request.Builder().url(url).post(formBody).build();
+        client.newCall(request).enqueue(callback);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.administrator.music;
+package com.example.administrator.music.Adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.administrator.music.R;
 import com.example.administrator.music.db.Music;
 import org.w3c.dom.Text;
 import java.util.List;

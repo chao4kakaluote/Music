@@ -15,11 +15,10 @@ public class Music extends DataSupport
     public void setId(int id) {
         this.id = id;
     }
-
     public void setMusicName(String musicName) {
-        this.musicName = musicName;
+        String name=musicName.substring(0,musicName.lastIndexOf('.'));
+        this.musicName=name;
     }
-
     public void setWords(String words) {
         this.words = words;
     }
@@ -27,11 +26,9 @@ public class Music extends DataSupport
     public int getId() {
         return id;
     }
-
     public String getMusicName() {
         return musicName;
     }
-
     public String getWords() {
         return words;
     }
