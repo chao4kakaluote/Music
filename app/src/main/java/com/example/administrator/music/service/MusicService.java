@@ -44,7 +44,6 @@ public class MusicService extends Service
         Log.d("startCommand","startCommand");
         return super.onStartCommand(intent, flags, startId);
     }
-
     @Override
     public void onDestroy()
     {
